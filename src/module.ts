@@ -1,6 +1,5 @@
-import { addPlugin, defineNuxtModule } from '@nuxt/kit'
-
 import chalk from 'chalk'
+import { defineNuxtModule } from '@nuxt/kit'
 import localtunnel from 'localtunnel'
 
 export interface ModuleOptions {
