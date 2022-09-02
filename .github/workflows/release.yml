@@ -17,7 +17,6 @@ jobs:
       - run: npm ci
       # - run: npm run build --if-present
       # require the below to generate tsconfig.json
-      - run: npm i
       - run: npm run prepack
       # - run: npm test
       - run: npx semantic-release

@@ -2,7 +2,7 @@
 
 A Nuxt module for automatically running [localtunnnel](https://github.com/localtunnel/localtunnel) to externally expose your development instance of Nuxt to the outside world.
 
-**Allows full configuration of all localtunnel configuration options including https**e
+**Allows full configuration of all localtunnel configuration options including https**
 
 ## Installation
 
