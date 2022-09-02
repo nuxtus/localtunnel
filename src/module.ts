@@ -2,7 +2,6 @@ import { addPlugin, defineNuxtModule } from '@nuxt/kit'
 
 import chalk from 'chalk'
 import localtunnel from 'localtunnel'
-import nuxtConfig from '~~/nuxt.config'
 
 export interface ModuleOptions {
   subdomain?: string,
