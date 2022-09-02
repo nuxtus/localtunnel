@@ -1,3 +1,62 @@
 {
-  "extends": "./playground/.nuxt/tsconfig.json"
+  "extends": "./playground/.nuxt/tsconfig.json",
+  "paths": {
+    "~~": [
+      "."
+    ],
+    "~~/*": [
+      "./*"
+    ],
+    "@@": [
+      "."
+    ],
+    "@@/*": [
+      "./*"
+    ],
+    "~": [
+      "."
+    ],
+    "~/*": [
+      "./*"
+    ],
+    "@": [
+      "."
+    ],
+    "@/*": [
+      "./*"
+    ],
+    "assets": [
+      "assets"
+    ],
+    "public": [
+      "public"
+    ],
+    "#app": [
+      "../node_modules/nuxt/dist/app"
+    ],
+    "#app/*": [
+      "../node_modules/nuxt/dist/app/*"
+    ],
+    "vue-demi": [
+      "../node_modules/nuxt/dist/app/compat/vue-demi"
+    ],
+    "#head": [
+      "../node_modules/nuxt/dist/head/runtime"
+    ],
+    "#head/*": [
+      "../node_modules/nuxt/dist/head/runtime/*"
+    ],
+    "#components": [
+      ".nuxt/components"
+    ],
+    "#imports": [
+      ".nuxt/imports"
+    ],
+    "#build": [
+      ".nuxt"
+    ],
+    "#build/*": [
+      ".nuxt/*"
+    ]
+  }
 }
