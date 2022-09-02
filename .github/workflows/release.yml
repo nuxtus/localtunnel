@@ -1,0 +1,26 @@
+name: Release npm package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+      - run: npm ci
+      # - run: npm run build --if-present
+      # require the below to generate tsconfig.json
+      # - run: npm run dev:build
+      - run: npm run prepack
+      # - run: npm test
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
