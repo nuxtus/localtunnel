@@ -1,5 +1,4 @@
-import { defineNuxtConfig } from 'nuxt'
-import localtunnel from '..'
+import localtunnel from '../src/module'
 
 export default defineNuxtConfig({
   modules: [
