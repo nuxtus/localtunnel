@@ -41,7 +41,7 @@
     "@semantic-release/github": "9.2.6",
     "@semantic-release/release-notes-generator": "12.1.0",
     "eslint": "latest",
-    "nuxt": "3.10.1",
+    "nuxt": "3.10.2",
     "semantic-release": "23.0.2"
   },
   "release": {
