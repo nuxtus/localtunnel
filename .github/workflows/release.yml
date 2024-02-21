@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "20.x"
       - run: npm ci
       # - run: npm run build --if-present
       # require the below to generate tsconfig.json
