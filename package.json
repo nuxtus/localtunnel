@@ -36,13 +36,13 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "8.0.6",
-    "@semantic-release/release-notes-generator": "10.0.3",
+    "@semantic-release/github": "9.2.6",
+    "@semantic-release/release-notes-generator": "12.1.0",
     "eslint": "latest",
-    "nuxt": "3.0.0",
-    "semantic-release": "19.0.5"
+    "nuxt": "3.10.2",
+    "semantic-release": "23.0.2"
   },
   "release": {
     "branches": "main",
@@ -77,5 +77,8 @@
       "@semantic-release/git",
       "@semantic-release/github"
     ]
+  },
+  "volta": {
+    "node": "20.11.1"
   }
 }
