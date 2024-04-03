@@ -7,7 +7,7 @@ A Nuxt module for automatically running [localtunnnel](https://github.com/localt
 ## Installation
 
 ```bash
-npm install @nuxtus/nuxt-localtunnel
+npx nuxi@latest module add nuxt-localtunnel
 ```
 
 Edit your nuxt.config.ts and add the @nuxtus/nuxt-localtunnel module:
