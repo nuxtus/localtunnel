@@ -1,6 +1,6 @@
-import chalk from "chalk";
-import { defineNuxtModule } from "@nuxt/kit";
-import localtunnel from "localtunnel";
+import chalk from 'chalk'
+import { defineNuxtModule } from '@nuxt/kit'
+import localtunnel from 'localtunnel'
 
 export interface ModuleOptions {
   subdomain?: string;
@@ -14,16 +14,16 @@ export interface ModuleOptions {
   allow_invalid_cert?: boolean;
 }
 
-let tunnel;
+let tunnel
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: "@nuxtus/nuxt-localtunnel",
-    configKey: "localtunnel",
+    name: '@nuxtus/nuxt-localtunnel',
+    configKey: 'localtunnel',
     compatibility: {
       // Semver version of supported nuxt versions
-      nuxt: ">=3.0.0",
-    },
+      nuxt: '>=3.0.0'
+    }
   },
   defaults: {
     host: undefined,
@@ -34,27 +34,33 @@ export default defineNuxtModule<ModuleOptions>({
     local_cert: undefined,
     local_key: undefined,
     local_ca: undefined,
-    allow_invalid_cert: true,
+    allow_invalid_cert: true
   },
 
-  setup(options, nuxt) {
-    if (process.env.NODE_ENV === "production") {
-      return;
+  setup (options, nuxt) {
+    if (process.env.NODE_ENV === 'production') {
+      return
     }
-    nuxt.hook("listen", async (nuxt) => {
+    nuxt.hook('listen', async (nuxt) => {
       const config = {
         host: options.host,
         port: options.port,
         subdomain: options.subdomain,
-      };
-      tunnel = await localtunnel(config);
+        local_host: options.local_host,
+        local_https: options.local_https,
+        local_cert: options.local_cert,
+        local_key: options.local_key,
+        local_ca: options.local_ca,
+        allow_invalid_cert: options.allow_invalid_cert
+      }
+      tunnel = await localtunnel(config)
       // the assigned public url for your tunnel
       // i.e. https://abcdefgjhij.localtunnel.me
       // eslint-disable-next-line no-console
-      console.info(`  > External: ${chalk.underline.cyan(tunnel.url)}\n`);
-    });
-    nuxt.hook("close", async (nuxt) => {
-      await tunnel.close();
-    });
-  },
-});
+      console.info(`  > External: ${chalk.underline.cyan(tunnel.url)}\n`)
+    })
+    nuxt.hook('close', async (nuxt) => {
+      await tunnel.close()
+    })
+  }
+})
