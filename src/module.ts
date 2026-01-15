@@ -60,7 +60,9 @@ export default defineNuxtModule<ModuleOptions>({
       console.info(`  > External: ${chalk.underline.cyan(tunnel.url)}\n`)
     })
     nuxt.hook('close', async (nuxt) => {
-      await tunnel.close()
+      if (tunnel) {
+        await tunnel.close()
+      }
     })
   }
 })
