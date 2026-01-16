@@ -37,6 +37,25 @@ All localtunnel configuration options are accepted via the `localtunnel` propert
 
 Refer to [tls.createSecureContext](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for details on the certificate options.
 
+### Environment Variables
+
+You can override configuration options using environment variables. This is particularly useful for keeping the same subdomain across development sessions without modifying your config file:
+
+- `LOCALTUNNEL_SUBDOMAIN` - Override the subdomain setting
+- `LOCALTUNNEL_HOST` - Override the host setting
+
+Example usage:
+
+```bash
+# Keep the same subdomain every time you run dev
+LOCALTUNNEL_SUBDOMAIN=myapp npm run dev
+
+# Use a custom localtunnel server
+LOCALTUNNEL_HOST=https://custom-server.com npm run dev
+```
+
+Environment variables take precedence over config file settings.
+
 ## Development
 
 - Run `npm run dev:prepare` to generate type stubs.

@@ -43,8 +43,11 @@ export default defineNuxtModule<ModuleOptions>({
     }
     nuxt.hook('listen', async (nuxt) => {
       const config = {
-        host: options.host,
+        host: process.env.LOCALTUNNEL_HOST || options.host,
         port: options.port,
+        subdomain: process.env.LOCALTUNNEL_SUBDOMAIN || options.subdomain,
+      };
+      tunnel = await localtunnel(config);
         subdomain: options.subdomain,
         local_host: options.local_host,
         local_https: options.local_https,
