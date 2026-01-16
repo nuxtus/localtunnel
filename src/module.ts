@@ -49,16 +49,13 @@ export default defineNuxtModule<ModuleOptions>({
         host: process.env.LOCALTUNNEL_HOST || options.host,
         port: options.port,
         subdomain: process.env.LOCALTUNNEL_SUBDOMAIN || options.subdomain,
-      };
-      tunnel = await localtunnel(config);
-        subdomain: options.subdomain,
         local_host: options.local_host,
         local_https: options.local_https,
         local_cert: options.local_cert,
         local_key: options.local_key,
         local_ca: options.local_ca,
         allow_invalid_cert: options.allow_invalid_cert
-      }
+      };
       tunnel = await localtunnel(config)
 
       if (options.display_qr) {
