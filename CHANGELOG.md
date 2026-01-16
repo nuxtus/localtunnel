@@ -1,5 +1,11 @@
 Changelog
 
+## Unreleased
+
+### Features
+
+* Add environment variable support for subdomain and host configuration ([eac4d22](https://github.com/nuxtus/localtunnel/commit/eac4d22))
+
 ## [1.0.1](https://github.com/nuxtus/localtunnel/compare/v1.0.0...v1.0.1) (2022-11-17)
 
 
