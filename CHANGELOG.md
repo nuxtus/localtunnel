@@ -1,5 +1,12 @@
 Changelog
 
+## [1.0.1](https://github.com/nuxtus/localtunnel/compare/v1.0.0...v1.0.1) (2022-11-17)
+
+
+### Bug Fixes
+
+* :bug: Fix playground nuxt config declaration ([0e13ad5](https://github.com/nuxtus/localtunnel/commit/0e13ad5650f4474fc30b1655522cf1434a7d7e07))
+
 # 1.0.0 (2022-09-02)
 
 
