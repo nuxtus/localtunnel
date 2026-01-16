@@ -29,7 +29,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.8",
+    "@nuxt/kit": "^4.0.0",
     "chalk": "^5.0.1",
     "localtunnel": "^2.0.2"
   },
@@ -38,11 +38,11 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "9.2.6",
-    "@semantic-release/release-notes-generator": "12.1.0",
+    "@semantic-release/github": "12.0.2",
+    "@semantic-release/release-notes-generator": "14.1.0",
     "eslint": "latest",
-    "nuxt": "3.10.2",
-    "semantic-release": "23.0.2"
+    "nuxt": "4.2.2",
+    "semantic-release": "25.0.2"
   },
   "release": {
     "branches": "main",
@@ -79,6 +79,6 @@
     ]
   },
   "volta": {
-    "node": "20.11.1"
+    "node": "24.13.0"
   }
 }
