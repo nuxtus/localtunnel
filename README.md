@@ -7,7 +7,7 @@ A Nuxt module for automatically running [localtunnnel](https://github.com/localt
 ## Installation
 
 ```bash
-npm install @nuxtus/nuxt-localtunnel
+npx nuxi@latest module add nuxt-localtunnel
 ```
 
 Edit your nuxt.config.ts and add the @nuxtus/nuxt-localtunnel module:
@@ -34,6 +34,7 @@ All localtunnel configuration options are accepted via the `localtunnel` propert
 - `local_key` (string) Path to certificate key file for local HTTPS server.
 - `local_ca` (string) Path to certificate authority file for self-signed certificates.
 - `allow_invalid_cert` (boolean) Disable certificate checks for your local HTTPS server (ignore cert/key/ca options).
+- `display_qr` (boolean) Display QR code for the newly generated URL.
 
 Refer to [tls.createSecureContext](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for details on the certificate options.
 

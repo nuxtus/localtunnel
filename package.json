@@ -31,7 +31,8 @@
   "dependencies": {
     "@nuxt/kit": "^4.0.0",
     "chalk": "^5.0.1",
-    "localtunnel": "^2.0.2"
+    "localtunnel": "^2.0.2",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
