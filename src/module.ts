@@ -1,6 +1,7 @@
 import chalk from "chalk";
 import { defineNuxtModule } from "@nuxt/kit";
 import localtunnel from "localtunnel";
+import QRCode from "qrcode";
 
 export interface ModuleOptions {
   subdomain?: string;
@@ -12,6 +13,7 @@ export interface ModuleOptions {
   local_key?: string;
   local_ca?: string;
   allow_invalid_cert?: boolean;
+  display_qr?: boolean;
 }
 
 let tunnel;
@@ -35,6 +37,7 @@ export default defineNuxtModule<ModuleOptions>({
     local_key: undefined,
     local_ca: undefined,
     allow_invalid_cert: true,
+    display_qr: false,
   },
 
   setup(options, nuxt) {
@@ -48,6 +51,20 @@ export default defineNuxtModule<ModuleOptions>({
         subdomain: options.subdomain,
       };
       tunnel = await localtunnel(config);
+
+      if (options.display_qr) {
+        try {
+          const qr = await QRCode.toString(tunnel.url, {
+            type: 'terminal',
+            small: true,
+          });
+
+          console.log(qr);
+        } catch (e) {
+          console.error('Failed to create QR code:', e);
+        }
+      }
+
       // the assigned public url for your tunnel
       // i.e. https://abcdefgjhij.localtunnel.me
       // eslint-disable-next-line no-console
