@@ -29,7 +29,7 @@ All localtunnel configuration options are accepted via the `localtunnel` propert
 - `subdomain` (string) Request a specific subdomain on the proxy server. **Note** You may not actually receive this name depending on availability.
 - `host` (string) URL for the upstream proxy server. Defaults to `https://localtunnel.me`.
 - `local_host` (string) Proxy to this hostname instead of `localhost`. This will also cause the `Host` header to be re-written to this value in proxied requests.
-- `local_https` (boolean) Enable tunneling to local HTTPS server.
+- `local_https` (boolean) Enable tunnelling to local HTTPS server.
 - `local_cert` (string) Path to certificate PEM file for local HTTPS server.
 - `local_key` (string) Path to certificate key file for local HTTPS server.
 - `local_ca` (string) Path to certificate authority file for self-signed certificates.
@@ -37,6 +37,25 @@ All localtunnel configuration options are accepted via the `localtunnel` propert
 - `display_qr` (boolean) Display QR code for the newly generated URL.
 
 Refer to [tls.createSecureContext](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options) for details on the certificate options.
+
+### Environment Variables
+
+You can override configuration options using environment variables. This is particularly useful for keeping the same subdomain across development sessions without modifying your config file:
+
+- `LOCALTUNNEL_SUBDOMAIN` - Override the subdomain setting
+- `LOCALTUNNEL_HOST` - Override the host setting
+
+Example usage:
+
+```bash
+# Keep the same subdomain every time you run dev
+LOCALTUNNEL_SUBDOMAIN=myappsubdomain npm run dev
+
+# Use a custom localtunnel server
+LOCALTUNNEL_HOST=https://custom-server.com npm run dev
+```
+
+Environment variables take precedence over config file settings.
 
 ## Development
 
