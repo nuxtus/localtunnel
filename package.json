@@ -43,7 +43,7 @@
     "@semantic-release/release-notes-generator": "14.1.0",
     "@types/qrcode": "^1.5.6",
     "eslint": "latest",
-    "nuxt": "4.2.2",
+    "nuxt": "4.3.0",
     "semantic-release": "25.0.2"
   },
   "release": {
