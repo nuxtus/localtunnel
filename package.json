@@ -37,8 +37,8 @@
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@semantic-release/changelog": "6.0.3",
-    "@semantic-release/git": "10.0.1",
+    "@semantic-release/changelog": "7.0.0",
+    "@semantic-release/git": "11.0.1",
     "@semantic-release/github": "12.0.6",
     "@semantic-release/release-notes-generator": "14.1.0",
     "@types/qrcode": "^1.5.6",
