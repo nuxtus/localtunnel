@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@main
       - uses: actions/setup-node@v6
         with:
-          node-version: "24.x"
+          node-version: "26.x"
       - run: npm ci
       # - run: npm run build --if-present
       # require the below to generate tsconfig.json
